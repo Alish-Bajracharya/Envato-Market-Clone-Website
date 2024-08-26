@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* General container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Top Navigation Bar Styling */
+.top-nav {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    height: 24px;
+}
+
+.site-title {
+    margin-left: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.center-section {
+    display: flex;
+    align-items: center;
+}
+
+.library-btn, .contact-info, .language-selector, .buy-btn {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.library-btn {
+    background-color: #1e3a8a;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.search-input {
+    padding: 8px 16px;
+    border: none;
+    width: 250px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Navigation Bar Styling */
+.main-nav {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0px;
+    padding: 35px; 
+    z-index: 1000;
+    background-color: #111; 
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    margin-top: 10px;
+    padding: 10px 0;
+    list-style-type: none;
+    border-radius: 5px;
+    z-index: 100;
+    width: 105px;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #555;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* User Options Styling */
+.user-options {
+    display: flex;
+}
+
+.user-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.user-link:hover {
+    color: #ccc;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slider-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    border-radius: 8px;
+}
+
+.slider-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.slider-text p {
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff00;
+    border: 2px solid white;
+    border-radius: 27px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
