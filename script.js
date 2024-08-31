@@ -19,7 +19,7 @@ function prevSlide() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter-number');
 
     counters.forEach(counter => {
@@ -46,3 +46,111 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+    document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider-container1');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = document.querySelectorAll('.slide-card').length;
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        // Calculate the offset based on the current slide index
+        const offset = index * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+
+        // Handle dots active state
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        // Move to the next slide, loop back to the start
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        // Move to the previous slide, loop to the last slide
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    // Auto-slide functionality
+    showSlide(currentIndex);
+    setInterval(nextSlide, 10000); // Auto-slide every 5 seconds
+});
+const slider = document.getElementById('course-slider');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const cardsToShow = 7; // Number of cards to show at a time
+let currentIndex = 0;
+
+function updateSliderPosition() {
+    const cardWidth = slider.querySelector('.course-slide-card').offsetWidth;
+    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = Math.max(0, slider.children.length - cardsToShow);
+    }
+    updateSliderPosition();
+});
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < slider.children.length - cardsToShow) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateSliderPosition();
+});
+
+// Initialize the slider position
+updateSliderPosition();
+
+
+(function() {
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+        const dots = document.querySelectorAll('.slider-dots1 .dot1');
+        const slideWidth = document.querySelector('.testimonial').offsetWidth + 20; // Include margin
+        
+        // Handle slide index overflow
+        if (index >= dots.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = dots.length - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        // Scroll to the current slide
+        testimonialsWrapper.scrollTo({
+            left: currentIndex * slideWidth,
+            behavior: 'smooth'
+        });
+
+        // Update the active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    // Function to handle dot click
+    function currentSlide(index) {
+        showSlide(index);
+    }
+
+    // Initialize the slider with the first slide
+    showSlide(currentIndex);
+
+    // Add event listeners to dots
+    document.querySelectorAll('.dot1').forEach((dot, i) => {
+        dot.addEventListener('click', () => currentSlide(i));
+    });
+})();

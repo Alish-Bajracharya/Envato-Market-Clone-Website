@@ -166,6 +166,7 @@ a {
     color: inherit;
 }
 
+/* Slider Styling */
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -196,7 +197,7 @@ a {
     color: white;
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    background: rgba(0, 0, 0, 0.5); 
     border-radius: 8px;
 }
 
@@ -208,7 +209,7 @@ a {
 .slider-text p {
     font-size: 1.2rem;
 }
-
+/* button styling */
 .btn {
     display: inline-block;
     padding: 15px 25px;
@@ -225,6 +226,7 @@ a {
     background-color: #ffffff;
     color: #007bff;
 }
+
 
 .prev, .next {
     position: absolute;
@@ -253,10 +255,11 @@ header {
     justify-content: center;
 }
 
+/* card styling */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* Adjusts the spacing between the cards */
+    gap: 20px; /* Adjusting the space between the cards */
 }
 
 .card {
@@ -334,14 +337,14 @@ header {
 .text-center {
     text-align: center;
 }
-
+/* counter styling */
 .counter-container {
     position: sticky;
     background-image: url('images/slider1.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 1500px;
+    max-width: 1515px;
     width: 100%;
     text-align: center;
     color: white;
@@ -355,7 +358,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
@@ -399,4 +402,379 @@ header {
 
 .counter-label {
     font-size: 1.125rem;
+}
+/* Slider Card Styling */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your need */
+    margin: 0 auto; /* Center the slider */
+    padding: 20px;
+    overflow: hidden; /* Hide overflow to prevent the slider from going outside the display */
+}
+
+.slider-container1 {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide-card {
+    flex: 0 0 33.33%; /* Three cards in a row */
+    max-width: 33.33%;
+    position: relative;
+    padding: 15px; /* Add some padding between the cards */
+}
+
+.slide-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    max-width: calc(100% - 40px);
+}
+
+.date-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.event-info {
+    max-width: 100%;
+}
+
+.event-details {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.event-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dots button {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dots button.active {
+    background-color: #333;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 16px;
+    color: #666;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.course-slider-wrapper {
+    background-color: #002366; 
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.course-slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    width: calc(100% * 7 / 5); 
+    position: static;
+}
+
+.course-slide-card {
+    flex: 0 0 calc(100% / 7); 
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff; 
+    border-radius: 8px;
+}
+
+.course-slide-card img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.preview-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.course-slide-card:hover .preview-text {
+    opacity: 1;
+}
+
+.date-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.course-slide-content {
+    padding: 15px;
+}
+
+.price-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.slider-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    pointer-events: all;
+    transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+    background-color: #0056b3;
+}
+
+.slider-button i {
+    pointer-events: none;
+}
+
+.testimonials-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.testimonials-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    color: #6c757d;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 1500px;
+    gap: 50px;
+    padding: 50px 50px;
+}
+
+.testimonial {
+    width: 30%;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.testimonial p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;    
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.client-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.client-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.dimmed {
+    background-color: #f1f1f1;
+    color: #b0b0b0;
+}
+
+.highlighted {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+.highlighted p {
+    color: white;
+}
+
+.highlighted .client-info p {
+    color: white;
+}
+.slider-dots1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dots1 button {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dots1 button.active {
+    background-color: #333;
+}
+
+.container2 {
+    display: flex;
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card1 {
+    background-color: #ffffff;
+    padding: 50px;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card1 h2 {
+    font-size: 29px;
+    margin-bottom: 15px;
+
+}
+
+.card1 p {
+    color: #6c757d;
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn3 {
+    display: inline-block;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    width: 200px;
+}
+
+.blue-btn3 {
+    background-color: #007bff;
+    border: #000000 solid 2px;
+}
+
+.blue-btn3:hover {
+    background-color: #ffffff;
+}
+
+.dark-btn3 {
+    background-color: #343a40;
+    border: #000000 solid 2px;
+}
+
+.dark-btn3:hover {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
