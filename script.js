@@ -46,16 +46,18 @@ function prevSlide() {
         }
     });
 });
-    document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider-container1');
     const dots = document.querySelectorAll('.dot');
     const totalSlides = document.querySelectorAll('.slide-card').length;
     let currentIndex = 0;
+    let autoSlideInterval;
 
     function showSlide(index) {
         // Calculate the offset based on the current slide index
         const offset = index * 100;
-        slider.style.transform = `translateX(${offset}%)`;
+        slider.style.transform = `translateX(-${offset}%)`;
 
         // Handle dots active state
         dots.forEach((dot, i) => {
@@ -69,20 +71,34 @@ function prevSlide() {
         showSlide(currentIndex);
     }
 
-    function prevSlide() {
-        // Move to the previous slide, loop to the last slide
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        showSlide(currentIndex);
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000); // Slide every 5 seconds
     }
 
-    // Auto-slide functionality
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoSlide(); // Stop auto sliding when a dot is clicked
+            currentIndex = index;
+            showSlide(currentIndex);
+            startAutoSlide(); // Restart auto sliding
+        });
+    });
+
+    // Initialize slider
     showSlide(currentIndex);
-    setInterval(nextSlide, 10000); // Auto-slide every 5 seconds
+    startAutoSlide(); // Start auto sliding
 });
+
+
 const slider = document.getElementById('course-slider');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const cardsToShow = 7; // Number of cards to show at a time
+const cardsToShow = 7;
 let currentIndex = 0;
 
 function updateSliderPosition() {
@@ -118,7 +134,7 @@ updateSliderPosition();
     function showSlide(index) {
         const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
         const dots = document.querySelectorAll('.slider-dots1 .dot1');
-        const slideWidth = document.querySelector('.testimonial').offsetWidth + 20; // Include margin
+        const slideWidth = document.querySelector('.testimonial').offsetWidth + 20;
         
         // Handle slide index overflow
         if (index >= dots.length) {
@@ -154,3 +170,20 @@ updateSliderPosition();
         dot.addEventListener('click', () => currentSlide(i));
     });
 })();
+// Scroll to Top functionality
+const scrollToTopButton = document.getElementById('scrollToTop');
+
+window.onscroll = function() {
+    if (window.pageYOffset > 100) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+};
+
+scrollToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
