@@ -261,7 +261,7 @@ header {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* Adjusting the space between the cards */
+    gap: 20px; 
 }
 
 .card {
@@ -409,10 +409,10 @@ header {
 .slider-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Adjust based on your need */
-    margin: 0 auto; /* Center the slider */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    overflow: hidden; /* Hide overflow to prevent the slider from going outside the display */
+    overflow: hidden; 
 }
 
 .slider-container1 {
@@ -421,10 +421,10 @@ header {
 }
 
 .slide-card {
-    flex: 0 0 33.33%; /* Three cards in a row */
+    flex: 0 0 33.33%;
     max-width: 33.33%;
     position: relative;
-    padding: 15px; /* Add some padding between the cards */
+    padding: 15px;
 }
 
 .slide-card img {
@@ -855,40 +855,40 @@ footer .space-y-4 > a:hover {
 
 /* Footer Styles */
 .footer {
-    background-color: #111; /* Dark background color */
-    padding: 20px 0; /* Padding for top and bottom */
-    color: #aaa; /* Light grey text color */
-    text-align: center; /* Center-align all text by default */
-    border-top: 1px solid #222; /* Add a slight border at the top */
+    background-color: #111;
+    padding: 20px 0; 
+    color: #aaa;
+    text-align: center; 
+    border-top: 1px solid #222;
 }
 
 .footer img {
-    height: 24px; /* Adjust the logo size */
-    margin-right: 10px; /* Space between logo and text */
+    height: 24px;
+
     margin-left: 100px;
 }
 
 .footer a {
-    color: #aaa; /* Light grey text for links */
-    text-decoration: none; /* Remove underline */
-    font-size: 14px; /* Slightly smaller font size */
+    color: #aaa; 
+    text-decoration: none; 
+    font-size: 14px;
     margin-left: -400px;
     margin-right: 0px;
 }
 
 
 .footer a:hover {
-    color: #fff; /* White text on hover */
+    color: #fff; 
 }
 
 .footer .fab {
-    font-size: 18px; /* Icon size */
-    color: #666; /* Grey color for icons */
-    transition: color 0.3s ease; /* Smooth transition */
+    font-size: 18px; 
+    color: #666; 
+    transition: color 0.3s ease; 
 }
 
 .footer .fab:hover {
-    color: #fff; /* White icons on hover */
+    color: #fff; 
 }
 
 /* Flexbox Alignment */
