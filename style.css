@@ -26,6 +26,7 @@ body {
 .left-section {
     display: flex;
     align-items: center;
+    margin-left: 40px;
 }
 
 
@@ -42,6 +43,7 @@ body {
 .center-section {
     display: flex;
     align-items: center;
+
 }
 
 .library-btn, .contact-info, .language-selector, .buy-btn {
@@ -52,13 +54,14 @@ body {
 
 .library-btn {
     background-color: #1e3a8a;
-    padding: 8px 16px;
-    border-radius: 5px;
+    padding: 10px 40px;
+    border-radius: 25px;
+    margin-left: -100px;
 }
 
 .search-bar {
     display: flex;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border-radius: 9999px;
     overflow: hidden;
     margin-left: 20px;
